@@ -32,7 +32,9 @@ preparationPlan : z.array(z.object({
     day : z.number().describe("The day number in the preparation plan"),
     focus : z.string().describe("The focus area for that day"),
     tasks : z.array(z.string()).describe("The tasks to be completed on that day")
-})).describe("The preparation plan for the candidate to improve their skills and prepare for the interview")
+})).describe("The preparation plan for the candidate to improve their skills and prepare for the interview"),
+
+title:z.string().describe("The title of the job for which the interview report is generated")
 })
 
 async function generateInterviewReport({resume, selfDescription, jobDescription}){
